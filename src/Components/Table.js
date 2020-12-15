@@ -8,20 +8,24 @@ function Table(props) {
 
     return (
         <table>
-            <tr>
-                { 
-                //Create the column headers
-                headers.map(header => <th> {header} </th>)
-                }
-            </tr>
-            {
-                //Scroll through the entries
-                props.data.map(
-                    (element, index) => (
-                        <TableRow headers={headers} element={element} index={index} />
+            <thead>
+                <tr>
+                    { 
+                        //Create the column headers
+                        headers.map(header => <th>{header}</th>)
+                    }
+                </tr>
+            </thead>
+            <tbody>
+                {
+                    //Scroll through the entries
+                    props.data.map(
+                        (element, index) => (
+                            <TableRow headers={headers} element={element} index={index} />
+                        )
                     )
-                )
-            }
+                }
+            </tbody>
         </table>
     );
 }
