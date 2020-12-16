@@ -1,13 +1,13 @@
 import React from 'react';
 
-function TableRow(props) {
+function TableRow({headers, element, index}) {
     return (
         <tr className = {
             //Set on every 2nd row the property odd
-            (props.index & 1) ? "odd" : ""
+            (index & 1) ? "odd" : ""
         }>{
             //Create a cell for every property of the underlying object
-            props.headers.map(header => <td> {props.element[header]} </td>)
+            headers.map(header => <td> {element[header]} </td>)
             }
         </tr>      
     );
